@@ -22,7 +22,8 @@ const HomePage = () => {
 
   useEffect(() => {
     setUser(useObject);
-  }, {});
+  }, []);
+
   const userRole = useObject?.role;
   useEffect(() => {
     switch (userRole) {
@@ -37,7 +38,7 @@ const HomePage = () => {
         break;
       default:
     }
-  }, {});
+  }, [userRole, navigate]);
 
   return (
     <div className='mt-2'>
