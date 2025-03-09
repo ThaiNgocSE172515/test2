@@ -23,6 +23,8 @@ import DoctorManagement from './pages/admin/DoctorManagement';
 import CustomerEditChildIndex from './pages/customer/CustomerEditChildIndex';
 import DoctorSchedule from './pages/doctor/DoctorSchedule';
 import DoctorScheduleManagement from './pages/admin/DoctorScheduleManagement';
+import AddDoctor from './pages/admin/AddDoctor';
+import UpdateDoctor from './pages/admin/UpdateDoctor';
 
 function App() {
   return (
@@ -85,6 +87,8 @@ function App() {
           <Route path='/admin' element={<LayoutAdmin />}>
             <Route index element={<Navigate to='/admin/doctors' replace />} />
             <Route path='doctors' element={<DoctorManagement />} />
+            <Route path='doctors/add' element={<AddDoctor />} />
+            <Route path='doctors/update/:doctorId' element={<UpdateDoctor />} />
             <Route path='doctors/:doctorId/schedule' element={<DoctorScheduleManagement />} />
           </Route>
         </Routes>
